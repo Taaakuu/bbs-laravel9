@@ -35,9 +35,26 @@ class UsersController extends Controller
     }
 
 
-    public function update(UserRequest $request, User $user)
+    /**
+     * 更新用户信息
+     *
+     * @param UserRequest $request
+     * @param ImageUploadHandler $uploader
+     * @param User $user
+     * @return RedirectResponse
+     */
+    public function update(UserRequest $request, ImageUploadHandler $uploader, User $user): RedirectResponse
     {
-        $user->update($request->all());
-        return redirect()->route('users.show', $user->id)->with('success', '个人资料更新成功');
+        $data = $request->all();
+
+        if ($request->avatar) {
+            $result = $uploader->save($request->avatar, 'avatars', $user->id);
+            if ($result) {
+                $data['avatar'] = $result['path'];
+            }
+        }
+
+        $user->update($data);
+        return redirect()->route('users.show', $user->id)->with('success', '个人资料更新成功！');
     }
 }
