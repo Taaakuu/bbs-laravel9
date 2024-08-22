@@ -1,3 +1,4 @@
+@php use Illuminate\Support\Facades\Auth; @endphp
 <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-static-top">
     <div class="container">
         <!-- Branding Image -->
@@ -27,7 +28,7 @@
                            data-bs-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">
                             <img
-                                src="https://img.freepik.com/premium-photo/3d-avatar-cartoon-character_113255-94484.jpg?w=2000"
+                                src="https://cdn.learnku.com/uploads/images/201709/20/1/PtDKbASVcz.png?imageView2/1/w/600/h/600"
                                 class="img-responsive img-circle" width="30px" height="30px" alt="">
                             {{ Auth::user()->name }}
                         </a>
