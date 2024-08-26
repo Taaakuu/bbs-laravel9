@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Handlers\ImageUploadHandler;
+use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Faker\Factory;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Console\Application;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 
 /**
  * Class UsersController

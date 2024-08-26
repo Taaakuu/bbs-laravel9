@@ -3,6 +3,8 @@
 namespace App\Handlers;
 
 use Illuminate\Support\Str;
+use Imagine\Gd\Imagine;
+use Imagine\Image\Box;
 
 
 class ImageUploadHandler
@@ -18,8 +20,9 @@ class ImageUploadHandler
      * 上传图片
      *
      * @param $file
-     * @param string $folder
-     * @param string $file_prefix
+     * @param $folder
+     * @param $file_prefix
+     * @param bool|int $max_width
      * @return array|bool
      */
     public function save($file, $folder, $file_prefix, bool|int $max_width = false): array|bool
