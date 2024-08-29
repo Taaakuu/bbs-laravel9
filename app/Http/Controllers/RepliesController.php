@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reply;
+use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ReplyRequest;
@@ -10,6 +12,8 @@ use Illuminate\Support\Facades\Auth;
 
 /**
  * Class RepliesController
+ * @package App\Http\Controllers
+ */
 class RepliesController extends Controller
 {
     /**
