@@ -57,17 +57,17 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     /**
-     * The attributes that are mass assignable.
+     * 标记消息通知为已读
      *
-     * @var array<int, string>
+     * @return void
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'introduction',
-        'avatar',
-    ];
+    public function markAsRead(): void
+    {
+        $this->notification_count = 0;
+        $this->save();
+        $this->unreadNotifications->markAsRead();
+    }
+
 
     /**
      * The attributes that should be hidden for serialization.
