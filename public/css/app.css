@@ -22837,12 +22837,12 @@ body {
 
 /* 消息通知 */
 .notification-badge .badge {
-    font-size: 12px;
-    margin-top: 14px;
+  font-size: 12px;
+  margin-top: 14px;
 }
 .notification-badge .badge-secondary {
-    background-color: #EBE8E8 !important;
+  background-color: #EBE8E8 !important;
 }
 .notification-badge .badge-hint {
-    background-color: #d15b47 !important;
+  background-color: #d15b47 !important;
 }
