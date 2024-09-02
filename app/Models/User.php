@@ -110,8 +110,8 @@ class User extends Authenticatable implements MustVerifyEmail
 
 
     /**
-     * 用户和回复的关联
-     *
+     * 判断当前用户是否是话题或者回复的作者
+     * 准确的说是判断当前用户是否是某个模型（$model）的作者
      * @return HasMany
      */
     public function replies(): HasMany

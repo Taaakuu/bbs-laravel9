@@ -18,6 +18,7 @@ use Illuminate\Http\RedirectResponse;
  */
 class UsersController extends Controller
 {
+
     /**
      *UsersController constructor.
      */
@@ -31,11 +32,9 @@ class UsersController extends Controller
      *
      * @param User $user
      * @return Factory|View|Application
-     * @throws AuthorizationException
      */
     public function show(User $user): Factory|View|Application
     {
-        $this->authorize('update', $user);
         return view('users.show', compact('user'));
     }
 
@@ -44,9 +43,11 @@ class UsersController extends Controller
      *
      * @param User $user
      * @return Factory|View|Application
+     * @throws AuthorizationException
      */
     public function edit(User $user): View|Factory|Application
     {
+        $this->authorize('update', $user);
         return view('users.edit', compact('user'));
     }
 
