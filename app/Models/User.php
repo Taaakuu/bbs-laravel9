@@ -10,6 +10,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+use Lab404\Impersonate\Models\Impersonate;
 
 
 /**
@@ -26,10 +27,14 @@ use Spatie\Permission\Traits\HasRoles;
  * @property string updated_at 更新时间
  * @property Topic topics 话题
  * @property Reply replies 回复
+ *
+ * @method static find(int $id)
+ *
+ * @package App\Models
  */
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, HasRoles;
+    use HasApiTokens, HasFactory, HasRoles, Impersonate;
 
     // 引入消息通知相关功能
     use Notifiable {
