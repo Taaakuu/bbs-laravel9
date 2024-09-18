@@ -28,6 +28,7 @@ class AppServiceProvider extends ServiceProvider
         \App\Models\User::observe(\App\Observers\UserObserver::class);
 		\App\Models\Reply::observe(\App\Observers\ReplyObserver::class);
         \App\Models\Reply::observe(\App\Observers\ReplyObserver::class);
+        \App\Models\Link::observe(\App\Observers\LinkObserver::class);
 
         // 设置 Paginator 的默认风格是 Bootstrap 风格
         \Illuminate\Pagination\Paginator::useBootstrap();
