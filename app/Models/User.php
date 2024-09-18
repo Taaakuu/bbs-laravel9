@@ -43,6 +43,13 @@ class User extends Authenticatable implements MustVerifyEmail
         notify as protected laravelNotify;
     }
 
+    protected $fillable = [
+        'name',    // 确保 'name' 被包含在这里
+        'email',
+        'password',
+        // 其他你想允许批量赋值的字段
+    ];
+
     /**
      * 通知用户，这里我们对 notify 方法进行了重写
      *
